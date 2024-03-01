@@ -7,22 +7,41 @@ const productDetails = [
     {
         img:product1,
         productName : "Cotton jacket",
-        price:"₹1500"
+        price:"₹ 1500"
     },
     {
         img:product2,
         productName : "Fashion coat",
-        price:"₹999"
+        price:"₹ 999"
     },
     {
         img:product3,
         productName : "Female coat",
-        price:"₹1299"
+        price:"₹ 1299"
     },
     {
         img:product4,
         productName : "Female Jakcet",
-        price:"₹1500"
+        price:"₹ 899"
+    },{
+        img:product1,
+        productName : "Cotton jacket",
+        price:"₹ 1500"
+    },
+    {
+        img:product2,
+        productName : "Fashion coat",
+        price:"₹ 999"
+    },
+    {
+        img:product3,
+        productName : "Female coat",
+        price:"₹ 1299"
+    },
+    {
+        img:product4,
+        productName : "Female Jakcet",
+        price:"₹ 899"
     }
 ]
 
@@ -39,7 +58,7 @@ const DailyDeals = () => {
             <li className="hover:text-black cursor-pointer text-gray-600">Sale Items</li>
         </ul>
 
-        <div className="lg:px-40 px-20  items-center flex justify-evenly flex-wrap">
+        <div className="lg:px-40 px-20  items-center flex justify-evenly flex-wrap gap-5">
             {productDetails.map((product)=>{
                 return(
                 <div className="text-center basis-64 relative">
