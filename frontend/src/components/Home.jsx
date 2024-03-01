@@ -1,7 +1,10 @@
 import HomeImage from "../assests/HomeImage.png"
+import DailyDeals from "./DailyDeals"
+import Service from "./Service"
 
 const Home = () => {
     return(
+        <>
         <div className="flex items-center justify-between lg:px-40 px-10 pt-10  bg-[#F3F0F1] overflow-hidden">
             <div className="w-[50%]">
                 <p className="text-[70%] tracking-widest font-medium">NEW ARRIVALS</p>
@@ -13,6 +16,9 @@ const Home = () => {
             <img src={HomeImage} alt="HomePageImage" className=" min-w-96"/>
 
         </div>
+        <Service></Service>
+        <DailyDeals></DailyDeals>
+        </>
     )
 }
 

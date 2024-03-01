@@ -2,6 +2,10 @@ import product1 from "../assests/product1.jpg"
 import product2 from "../assests/product2.jpg"
 import product3 from "../assests/product3.jpg"
 import product4 from "../assests/product4.jpg"
+import product5 from "../assests/product5.jpg"
+import product6 from "../assests/product6.jpg"
+import product7 from "../assests/product7.jpg"
+import product8 from "../assests/product8.jpg"
 
 const productDetails = [
     {
@@ -24,22 +28,22 @@ const productDetails = [
         productName : "Female Jakcet",
         price:"₹ 899"
     },{
-        img:product1,
+        img:product5,
         productName : "Cotton jacket",
         price:"₹ 1500"
     },
     {
-        img:product2,
+        img:product6,
         productName : "Fashion coat",
         price:"₹ 999"
     },
     {
-        img:product3,
+        img:product7,
         productName : "Female coat",
         price:"₹ 1299"
     },
     {
-        img:product4,
+        img:product8,
         productName : "Female Jakcet",
         price:"₹ 899"
     }
