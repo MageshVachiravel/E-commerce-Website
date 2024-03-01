@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar"
 import Home from "./components/Home"
 import Service from "./components/service"
+import DailyDeals from "./components/DailyDeals"
 
 const App = ()=>{
     return (
@@ -8,6 +9,7 @@ const App = ()=>{
         <Navbar></Navbar>
         <Home></Home>
         <Service></Service>
+        <DailyDeals></DailyDeals>
         </>
     )
 }

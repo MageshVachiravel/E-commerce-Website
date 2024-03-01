@@ -12,7 +12,7 @@ const Service = () => {
            {
             heading.map((title,index) => {
                 return (
-                    <div className="flex gap-4 items-center basis-[250px]">
+                    <div className="flex gap-4 md:items-center justify-center flex-col md:flex-row basis-[160px] lg:basis-[250px]">
                         <img src={icons[index]} alt="dsicountImage" className=" w-14"/>
                         <div>
                             <h1 className="text-xl">{title}</h1>
