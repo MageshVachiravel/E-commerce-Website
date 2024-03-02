@@ -1,8 +1,8 @@
 import HomeImage from "../assests/HomeImage.png"
 import DailyDeals from "./DailyDeals"
-import Service from "./Service"
+import Service from "./service"
 
-const Home = () => {
+const Home = ({ cart, setCart }) => {
     return(
         <>
         <div className="flex items-center justify-between lg:px-40 px-10 pt-10  bg-[#F3F0F1] overflow-hidden">
@@ -17,7 +17,7 @@ const Home = () => {
 
         </div>
         <Service></Service>
-        <DailyDeals></DailyDeals>
+        <DailyDeals cart={cart} setCart={setCart} ></DailyDeals>
         </>
     )
 }

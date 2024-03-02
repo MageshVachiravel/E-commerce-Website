@@ -11,45 +11,70 @@ const productDetails = [
     {
         img:product1,
         productName : "Cotton jacket",
-        price:"₹ 1500"
+        price:1500,
+        discount:true,
+        disocuntRate:"-40%",
+        originalRate:"2500"
     },
     {
         img:product2,
         productName : "Fashion coat",
-        price:"₹ 999"
+        price:999,
+        discount:true,
+        disocuntRate:"-20%",
+        originalRate:"1199"
     },
     {
         img:product3,
         productName : "Female coat",
-        price:"₹ 1299"
+        price:1299,
+        discount:false, 
     },
     {
         img:product4,
         productName : "Female Jakcet",
-        price:"₹ 899"
+        price: 899,
+        discount:false,
     },{
         img:product5,
-        productName : "Cotton jacket",
-        price:"₹ 1500"
+        productName : "Female jacket",
+        price: 1600,
+        discount:true,
+        disocuntRate:"-10%",
+        originalRate:"1800"
     },
     {
         img:product6,
-        productName : "Fashion coat",
-        price:"₹ 999"
+        productName : "Kids coat",
+        price:899,
+        discount:false,
     },
     {
         img:product7,
-        productName : "Female coat",
-        price:"₹ 1299"
+        productName : "Kids frock",
+        price:299,
+        discount:true,
+        disocuntRate:"-40%",
+        originalRate:"800"
     },
     {
         img:product8,
-        productName : "Female Jakcet",
-        price:"₹ 899"
+        productName : "Kids frock",
+        price:499,
+        discount:true,
+        disocuntRate:"-30%",
+        originalRate:"800"
     }
 ]
 
-const DailyDeals = () => {
+
+
+const DailyDeals = ({cart,setCart}) => {
+
+    const addCart = () => {
+        setCart([...cart, productDetails])
+    }    
+
     return(
         <>
         <div className="text-center">
@@ -62,14 +87,26 @@ const DailyDeals = () => {
             <li className="hover:text-black cursor-pointer text-gray-600">Sale Items</li>
         </ul>
 
-        <div className="lg:px-40 px-20  items-center flex justify-evenly flex-wrap gap-5">
-            {productDetails.map((product)=>{
+        <div className="lg:px-40 px-20  items-center flex justify-evenly flex-wrap gap-8">
+            {productDetails.map((product,index)=>{
                 return(
-                <div className="text-center basis-64 relative">
+                <div className="text-center basis-64 relative" key={index}>
                 <img src={product.img} alt="" className="w-full h-80" />
-                <p className="absolute top-3 right-3 bg-[#A749FF] px-3 py-0.5 text-sm rounded text-white">New</p>
+                <p className="absolute top-3 right-3 bg-[#A749FF] px-3.5 py-0.5 text-sm rounded text-white">New</p>
                 <p>{product.productName}</p>
-                <p>{product.price}</p>
+                <p> 
+                <span className="text-sm mr-3 text-green-600 font-medium">{
+                  product.discount? product.disocuntRate+ " off":""      
+                }
+                </span>
+                <span className="line-through mr-2">
+                    {
+                        product.discount? product.originalRate:""
+                    }    
+                </span> 
+            
+                ₹ {product.price}</p>
+                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1" onClick={addCart}>Add to cart</button>
                 </div>
                 )
             })
