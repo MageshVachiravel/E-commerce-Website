@@ -2,6 +2,9 @@
 const Cart = () => {
     return(
         <>
+        <div className="bg-gray-100 py-10 text-center">
+                <h1 className=" text-md">HOME / <span className="font-medium">CART</span></h1>
+        </div>
         <h1 className=" text-lg font-semibold">Cart Products</h1>
         <div className="flex flex-col p-3">
                 <div className="flex gap-2 items-center mb-2 border  border-gray-400">

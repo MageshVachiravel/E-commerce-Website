@@ -1,18 +1,20 @@
 import {Link} from "react-router-dom"
 
+
 const Register = () => {
     return(
+        <>
         <div>
             <div className="bg-gray-100 py-10 text-center">
                 <h1 className=" text-md">HOME / <span className="font-medium">LOGIN OR REGISTER</span></h1>
             </div>
 
             <div>
-                <h1 className="text-black font-bold text-2xl text-center mt-16 transition-all"> <Link to={"/login"}> LOGIN </Link>  | <span className="text-purple-500 transition-all">REGISTER</span></h1>
+                <h1 className="text-black font-bold text-2xl text-center mt-16 transition-all"> <Link to={"/login"}> LOGIN </Link>  |  <Link to={"/register"}> <span className="text-purple-500"> REGISTER</span></Link></h1>
             </div>
 
             <div className="flex justify-center my-16">
-                <form action="" className="lg:w-1/2 w-[80%] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-16 py-20">
+                <form action="" className="lg:w-1/2 md:w-[80%] w-[100%] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] px-16 py-20">
                     <input type="text" placeholder="Username" className="w-full px-3 border py-3 mb-5 outline-none"/> <br />
                     <input type="password" placeholder="Password" className="w-full  border px-3 py-3 mb-5 outline-none" /> <br />
                     <input type="email" placeholder="Email" className="w-full  border px-3 py-3 outline-none" />
@@ -21,7 +23,9 @@ const Register = () => {
                 </form>
             </div>
         </div>
+
         
+        </>
     )
 }
 
