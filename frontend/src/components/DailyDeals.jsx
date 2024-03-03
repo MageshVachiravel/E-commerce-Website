@@ -69,12 +69,7 @@ const productDetails = [
 
 
 
-const DailyDeals = ({cart,setCart}) => {
-
-    const addCart = () => {
-        setCart([...cart, productDetails])
-    }    
-
+const DailyDeals = () => {
     return(
         <>
         <div className="text-center">
@@ -106,7 +101,7 @@ const DailyDeals = ({cart,setCart}) => {
                 </span> 
             
                 ₹ {product.price}</p>
-                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1" onClick={addCart}>Add to cart</button>
+                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1">Add to cart</button>
                 </div>
                 )
             })
