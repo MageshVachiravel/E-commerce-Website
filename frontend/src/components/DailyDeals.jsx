@@ -10,64 +10,80 @@ import product8 from "../assests/product8.jpg"
 
 const productDetails = [
     {
+        id:1,
         img:product1,
         productName : "Woolen coat",
         price:1500,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"2500"
+        originalRate:"2500",
+        amount:1
     },
     {
+        id:2,
         img:product2,
         productName : "Fashion coat",
         price:999,
         discount:true,
         disocuntRate:"-20%",
-        originalRate:"1199"
+        originalRate:"1199",
+        amount:1
     },
     {
+        id:3,
         img:product3,
         productName : "Female coat",
         price:1299,
-        discount:false, 
+        discount:false,
+        amount:1
     },
     {
+        id:4,
         img:product4,
         productName : "Female Jakcet",
         price: 899,
         discount:false,
+        amount:1
     },{
+        id:5,
         img:product5,
         productName : "Female jacket",
         price: 1600,
         discount:true,
         disocuntRate:"-10%",
-        originalRate:"1800"
+        originalRate:"1800",
+        amount:1
     },
     {
+        id:6,
         img:product6,
         productName : "Kids coat",
         price:899,
         discount:false,
+        amount:1
     },
     {
+        id:7,
         img:product7,
         productName : "Kids frock",
         price:299,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"800"
+        originalRate:"800",
+        amount:1
     },
     {
+        id:8,
         img:product8,
         productName : "Kids frock",
         price:499,
         discount:true,
         disocuntRate:"-30%",
-        originalRate:"800"
+        originalRate:"800",
+        amount:1
     }
 ]
-const DailyDeals = () => {
+const DailyDeals = ({handleClick}) => {
     return(
         <>
         {
@@ -78,7 +94,7 @@ const DailyDeals = () => {
             </div>    
 
         <ul className="flex justify-center items-center text-xl font-medium py-7 gap-10 lg:gap-16">
-            <Link to={"/"}><li className="hover:text-black cursor-pointer text-black">New Arrivals</li></Link>
+            <Link to={"/home"}><li className="hover:text-black cursor-pointer text-black">New Arrivals</li></Link>
             <Link to={"/BestSellers"}><li className="hover:text-black cursor-pointer text-gray-600">Best Sellers</li></Link>
             <Link to={"/SaleItems"}><li className="hover:text-black cursor-pointer text-gray-600">Sale Items</li></Link>
         </ul>
@@ -101,7 +117,7 @@ const DailyDeals = () => {
                 </span> 
             
                 ₹ {product.price}</p>
-                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1">Add to cart</button>
+                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1" onClick={()=>handleClick(product)}>Add to cart</button>
                 </div>
                 )
             })

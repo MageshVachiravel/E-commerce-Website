@@ -11,63 +11,79 @@ import {Link} from "react-router-dom"
 
 const productDetails = [
     {
+        id:15,
         img:product15,
         productName : "New fashion coat",
         price:1500,
-        discount:false
+        discount:false,
+        amount:1
     },
     {
+        id:16,
         img:product2,
         productName : "light brown fashion coat",
         price:999,
         discount:true,
         disocuntRate:"-20%",
-        originalRate:"1199"
+        originalRate:"1199",
+        amount:1
     },
     {
+        id:17,
         img:product17,
         productName : "kids  coat",
         price:1299,
         discount:false,
         disocuntRate:"-40%",
-        originalRate:"2500"
+        originalRate:"2500",
+        amount:1
     },
     {
+        id:18,
         img:product18,
         productName : "Female dress",
         price: 899,
         discount:false,
+        amount:1
     },{
+        id:19,
         img:product19,
         productName : "Analog watch",
         price: 1600,
-        discount:false
+        discount:false,
+        amount:1
     },
     {
+        id:20,
         img:product20,
         productName : "Long slip bag",
         price:899,
         discount:false,
         disocuntRate:"-10%",
-        originalRate:"1800"
+        originalRate:"1800",
+        amount:1
     },
     {
+        id:21,
         img:product21,
         productName : "Kids hoodie",
         price:299,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"800"
+        originalRate:"800",
+        amount:1
     },
     {
+        id:22,
         img:product22,
         productName : "Slip Bag",
         price:499,
-        discount:false
+        discount:false,
+        amount:1
     }
 ]
 
-const SaleItems = () => {
+const SaleItems = ({handleClick}) => {
     return (
         <>
         <Home/>
@@ -76,7 +92,7 @@ const SaleItems = () => {
         </div>    
 
         <ul className="flex justify-center items-center text-xl font-medium py-7 gap-10 lg:gap-16">
-            <Link to={"/"}><li className="hover:text-black cursor-pointer text-gray-600">New Arrivals</li></Link>
+            <Link to={"/home"}><li className="hover:text-black cursor-pointer text-gray-600">New Arrivals</li></Link>
             <Link to={"/BestSellers"}><li className="hover:text-black cursor-pointer text-gray-600">Best Sellers</li></Link>
             <Link to={"/SaleItems"}><li className="hover:text-black cursor-pointer text-black">Sale Items</li></Link>
         </ul>
@@ -101,7 +117,7 @@ const SaleItems = () => {
                 </span> 
             
                 ₹ {product.price}</p>
-                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1">Add to cart</button>
+                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1" onClick={()=>handleClick(product)}>Add to cart</button>
                 </div>
                 )
             })

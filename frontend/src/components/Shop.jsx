@@ -28,172 +28,228 @@ const tag= ["Fashion","Men","Jacket","Full Sleeve","Women","Coat","Top","Sleevel
 
 const productDetails = [
     {
+        id:1,
         img:product1,
         productName : "Woolen coat",
         price:1500,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"2500"
+        originalRate:"2500",
+        amount:1
     },
     {
+        id:2,
         img:product2,
         productName : "Fashion coat",
         price:999,
         discount:true,
         disocuntRate:"-20%",
-        originalRate:"1199"
+        originalRate:"1199",
+        amount:1
     },
     {
+        id:3,
         img:product3,
         productName : "Female coat",
         price:1299,
-        discount:false, 
+        discount:false,
+        amount:1 
     },
     {
+        id:4,
         img:product4,
         productName : "Female Jakcet",
         price: 899,
         discount:false,
+        amount:1
     },{
+        id:5,
         img:product5,
         productName : "Female jacket",
         price: 1600,
         discount:true,
         disocuntRate:"-10%",
-        originalRate:"1800"
+        originalRate:"1800",
+        amount:1
     },
     {
+        id:6,
         img:product6,
         productName : "Kids coat",
         price:899,
         discount:false,
+        amount:1
     },
     {
+        id:7,
         img:product7,
         productName : "Kids frock",
         price:299,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"800"
+        originalRate:"800",
+        amount:1
     },
     {
+        id:8,
         img:product8,
         productName : "Kids frock",
         price:499,
         discount:true,
         disocuntRate:"-30%",
-        originalRate:"800"
+        originalRate:"800",
+        amount:1
     },
     {
+        id:9,
         img:product9,
         productName : "Female top",
         price:2100,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"3200"
+        originalRate:"3200",
+        amount:1
     },
     {
+        id:10,
         img:product10,
         productName : "Fashion jacket",
         price:1800,
         discount:true,
         disocuntRate:"-20%",
-        originalRate:"2200"
+        originalRate:"2200",
+        amount:1
     },
     {
+        id:11,
         img:product11,
         productName : "kids shirt",
         price:500,
-        discount:false, 
+        discount:false,
+        amount:1
     },
     {
+        id:12,
         img:product12,
         productName : "kids shirt",
         price: 900,
         discount:false,
+        amount:1
     },{
+        id:13,
         img:product13,
         productName : "kids seven",
         price: 899,
         discount:true,
         disocuntRate:"-10%",
-        originalRate:"1200"
+        originalRate:"1200",
+        amount:1
     },
     {
+        id:14,
         img:product14,
         productName : "Kids sweater",
         price:899,
         discount:false,
+        amount:1
     },
     {
+        id:23,
+        img:product1,
+        productName : "Kids sweater",
+        price:900,
+        discount:true,
+        disocuntRate:"-40%",
+        originalRate:"1500",
+        amount:1
+    },
+    {
+        id:24,
         img:product6,
         productName : "Kids T-shirt",
         price:900,
         discount:true,
         disocuntRate:"-30%",
-        originalRate:"1200"
+        originalRate:"1200",
+        amount:1
     }
 ]
 
 const productList = [
     {
+        id:15,
         img:product15,
         productName : "New fashion coat",
         price:1500,
-        discount:false
+        discount:false,
+        amount:1
     },
     {
+        id:16,
         img:product2,
         productName : "light brown fashion coat",
         price:999,
         discount:true,
         disocuntRate:"-20%",
-        originalRate:"1199"
+        originalRate:"1199",
+        amount:1
     },
     {
+        id:17,
         img:product17,
         productName : "kids  coat",
         price:1299,
         discount:false,
         disocuntRate:"-40%",
-        originalRate:"2500"
+        originalRate:"2500",
+        amount:1
     },
     {
+        id:18,
         img:product18,
         productName : "Female dress",
         price: 899,
         discount:false,
+        amount:1
     },{
+        id:19,
         img:product19,
         productName : "Analog watch",
         price: 1600,
-        discount:false
+        discount:false,
+        amount:1
     },
     {
+        id:20,
         img:product20,
         productName : "Long slip bag",
         price:899,
         discount:false,
         disocuntRate:"-10%",
-        originalRate:"1800"
+        originalRate:"1800",
+        amount:1
     },
     {
+        id:21,
         img:product21,
         productName : "Kids hoodie",
         price:299,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"800"
+        originalRate:"800",
+        amount:1
     },
     {
+        id:22,
         img:product22,
         productName : "Slip Bag",
         price:499,
-        discount:false
+        discount:false,
+        amount:1
     }
 ]
 
-const Shop = () => {
+const Shop = ({handleClick}) => {
 
     const [toggle,setToggle] = useState(true)
 
@@ -315,7 +371,7 @@ const Shop = () => {
                         </span> 
                     
                         ₹ {product.price}</p>
-                        <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1">Add to cart</button>
+                        <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1" onClick={()=>handleClick(product)}>Add to cart</button>
                         </div>
                         )
                     })
@@ -340,7 +396,7 @@ const Shop = () => {
                 </span> 
             
                 ₹ {product.price}</p>
-                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1">Add to cart</button>
+                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1" onClick={()=>handleClick(product)}>Add to cart</button>
                 </div>
                 )
             })

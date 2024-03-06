@@ -11,65 +11,81 @@ import { Link } from "react-router-dom"
 
 const productDetails = [
     {
+        id:9,
         img:product9,
         productName : "Female top",
         price:2100,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"3200"
+        originalRate:"3200",
+        amount:1
     },
     {
+        id:10,
         img:product10,
         productName : "Fashion jacket",
         price:1800,
         discount:true,
         disocuntRate:"-20%",
-        originalRate:"2200"
+        originalRate:"2200",
+        amount:1
     },
     {
+        id:11,
         img:product11,
         productName : "kids shirt",
         price:500,
-        discount:false, 
+        discount:false,
+        amount:1
     },
     {
+        id:12,
         img:product12,
         productName : "kids shirt",
         price: 900,
         discount:false,
+        amount:1
     },{
+        id:13,
         img:product13,
         productName : "kids seven",
         price: 899,
         discount:true,
         disocuntRate:"-10%",
-        originalRate:"1200"
+        originalRate:"1200",
+        amount:1
     },
     {
+        id:14,
         img:product14,
         productName : "Kids sweater",
         price:899,
         discount:false,
+        amount:1
     },
     {
+        id:23,
         img:product1,
         productName : "Kids sweater",
         price:900,
         discount:true,
         disocuntRate:"-40%",
-        originalRate:"1500"
+        originalRate:"1500",
+        amount:1
     },
     {
+        id:24,
         img:product6,
         productName : "Kids T-shirt",
         price:900,
         discount:true,
         disocuntRate:"-30%",
-        originalRate:"1200"
+        originalRate:"1200",
+        amount:1
     }
 ]
 
-const BestSellers = () => {
+const BestSellers = ({handleClick}) => {
     
     return (
         <>
@@ -79,7 +95,7 @@ const BestSellers = () => {
         </div>    
 
         <ul className="flex justify-center items-center text-xl font-medium py-7 gap-10 lg:gap-16">
-            <Link to={"/"}><li className="hover:text-black cursor-pointer text-gray-600">New Arrivals</li></Link>
+            <Link to={"/home"}><li className="hover:text-black cursor-pointer text-gray-600">New Arrivals</li></Link>
             <Link to={"/BestSellers"}><li className="hover:text-black cursor-pointer text-black">Best Sellers</li></Link>
             <Link to={"/SaleItems"}><li className="hover:text-black cursor-pointer text-gray-600">Sale Items</li></Link>
         </ul>
@@ -104,7 +120,7 @@ const BestSellers = () => {
                 </span> 
             
                 ₹ {product.price}</p>
-                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1">Add to cart</button>
+                <button className="text-white mt-3 bg-purple-600 px-4 text-md py-1" onClick={()=>handleClick(product)}>Add to cart</button>
                 </div>
                 )
             })

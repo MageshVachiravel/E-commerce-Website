@@ -2,10 +2,10 @@ import HomeImage from "../assests/HomeImage.png"
 import DailyDeals from "./DailyDeals"
 import Service from "./service"
 
-const Home = ({ cart, setCart }) => {
+const Home = ({ handleClick }) => {
     return(
         <>
-        <div className="flex items-center justify-between lg:px-40 px-10 pt-10  bg-[#F3F0F1] overflow-hidden">
+        <div className="flex items-center justify-between lg:px-40 px-10 pt-10 bg-[#F3F0F1] overflow-hidden">
             <div className="lg:w-[50%]">
                 <p className="text-[70%] tracking-widest font-medium">NEW ARRIVALS</p>
                 <h1 className=" font-extrabold text-6xl ">New arrivals <br /> ready to rock</h1>
@@ -17,7 +17,7 @@ const Home = ({ cart, setCart }) => {
 
         </div>
         <Service></Service>
-        <DailyDeals></DailyDeals>
+        <DailyDeals handleClick={handleClick}></DailyDeals>
         </>
     )
 }
