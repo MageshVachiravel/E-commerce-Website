@@ -25,7 +25,7 @@ const Cart = ({cart,setCart}) => {
 
     return(
         <>
-        <div className="bg-gray-100 py-10 text-center">
+        <div className="bg-gray-100 py-10 text-center ">
                 <h1 className=" text-md">HOME / <span className="font-medium">CART</span></h1>
         </div>
 
@@ -36,9 +36,10 @@ const Cart = ({cart,setCart}) => {
             <p className="py-2 text-xl ">No items found in cart</p>
             <Link to={"/shop"}><button className="bg-purple-500 px-7 py-2 text-white outline-none rounded my-3" >Shop Now</button></Link>
             </div>
-             :<div class="relative px-14 py-5">
+             :<div class="relative lg:px-14 px-4 py-5">
                 <h1 className=" text-2xl font-semibold py-5">Your cart items</h1>
-            <table class="w-full text-md text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+            <div className="overflow-x-scroll">
+            <table class="w-full text-md text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-sm text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400  border-b border-r border-l border-t">
                     <tr>
                         <th scope="col" class="px-6 py-3">
@@ -93,6 +94,7 @@ const Cart = ({cart,setCart}) => {
                 }
                 </tbody>
             </table>
+            </div>
                 <h1>Total Price : {price}</h1>
 
             </div>
