@@ -11,7 +11,7 @@ import product8 from "../assests/product8.jpg"
 const productDetails = [
     {
         img:product1,
-        productName : "Saptiya",
+        productName : "Woolen coat",
         price:1500,
         discount:true,
         disocuntRate:"-40%",
@@ -71,7 +71,7 @@ const DailyDeals = () => {
     return(
         <>
         {
-            window.location.pathname === "/"?
+            window.location.pathname === "/home"?
             <div>
             <div className="text-center" id="newArrivals">
             <h1 className="text-3xl tracking-tighter"> ――― <span className="text-3xl font-bold tracking-wide">DAILY DEALS!</span> ――― </h1>
