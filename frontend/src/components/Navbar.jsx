@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom"
 
 
-const Navbar = ({ login, setLogin, size }) => {
+const Navbar = ({ login, setLogin, size , setCart }) => {
 
     const logout = useNavigate();
 
@@ -19,6 +19,7 @@ const Navbar = ({ login, setLogin, size }) => {
         const confirm = window.confirm("do you want to logout")
         if (confirm === true) {
             setLogin(false)
+            setCart([])
             logout("/")
         }
     }

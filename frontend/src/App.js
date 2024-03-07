@@ -18,6 +18,7 @@ const App = ()=>{
     const [cart,setCart ] = useState([]);    
 
     const handleClick = (item) => {
+        if(login){
         let isPresent = false;
         cart.forEach((product)=>{
            if(item.id === product.id){
@@ -38,13 +39,40 @@ const App = ()=>{
 
             return ;
         }
+
+        else{
+            
+            toast.success('Added to cart', {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+        }
     
            setCart([...cart,item])
+    }
+    else{
+        toast.error('Please Login to add cart', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+    }
     }
     return (
         <>
         <BrowserRouter>
-        <Navbar login={login} setLogin={setLogin} size={cart.length}></Navbar>
+        <Navbar login={login} setLogin={setLogin} size={cart.length} setCart={setCart}></Navbar>
         <Routes>
             <Route path='/home' element={<Home handleClick={handleClick} />}></Route>
             <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />}></Route>

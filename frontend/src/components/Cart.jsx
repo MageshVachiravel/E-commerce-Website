@@ -11,12 +11,12 @@ const Cart = ({cart,setCart}) => {
     }
 
     const handlePrice = () => {
-        let ans = 0;
+        let total = 0;
         cart.map((item) => {
-             ans += item.amount * item.price
+             total += item.amount * item.price
         })
 
-        setPrice(ans)
+        setPrice(total)
     }
 
     useEffect(()=>{
