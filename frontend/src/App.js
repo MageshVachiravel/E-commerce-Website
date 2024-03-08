@@ -11,6 +11,7 @@ import Contact from "./components/Contact"
 import { useState } from "react"
 import Shop from "./components/Shop"
 import { ToastContainer, toast } from 'react-toastify';
+import CheckOut from "./components/CheckOut"
 
 const App = ()=>{
 
@@ -82,6 +83,7 @@ const App = ()=>{
             <Route path="/BestSellers" element={<BestSellers handleClick={handleClick} />}></Route>
             <Route path="/SaleItems" element={<SaleItems handleClick={handleClick} />}></Route>
             <Route path="/shop" element={<Shop handleClick={handleClick} />}></Route>
+            <Route path={"/checkout"} element={<CheckOut />}></Route>
         </Routes>
         <Footer></Footer>
         <ToastContainer />

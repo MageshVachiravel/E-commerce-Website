@@ -77,7 +77,7 @@ const Contact = () => {
                         Your Message
                     </label>
                     <textarea rows="10"
-                        class="appearance-none block w-full border-gray-500 bg-transparent text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"></textarea>
+                        class="appearance-none block w-full border-gray-500 bg-transparent text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight outline-none"></textarea>
                 </div>
                 <div class="flex justify-between w-full px-3">
                     <div class="md:flex md:items-center">

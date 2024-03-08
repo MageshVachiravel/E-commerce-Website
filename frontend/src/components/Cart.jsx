@@ -10,6 +10,10 @@ const Cart = ({cart,setCart}) => {
         setCart(arr);
     }
 
+    const handleClear = () => {
+        setCart([]);
+    }
+
     const handlePrice = () => {
         let total = 0;
         cart.map((item) => {
@@ -95,7 +99,12 @@ const Cart = ({cart,setCart}) => {
                 </tbody>
             </table>
             </div>
-                <h1>Total Price : {price}</h1>
+                <div className="flex justify-between mt-4 flex-col md:flex-row gap-5"> 
+                    <Link to={"/shop"}>
+                    <button className="px-8 py-4 text-sm font-semibold w-full rounded-3xl hover:bg-purple-500 hover:text-white transition-all duration-300 bg-gray-100">CONTINUE SHOPPING</button>
+                    </Link>
+                    <button onClick={handleClear} className="px-8 py-4 text-sm font-semibold rounded-3xl hover:bg-purple-500 hover:text-white transition-all duration-300 bg-gray-100">CLEAR SHOPPING CART</button>
+                </div>
 
             </div>
         }

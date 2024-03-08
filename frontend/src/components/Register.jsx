@@ -3,7 +3,7 @@ import { database } from "../firebaseConfig"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createUserWithEmailAndPassword } from "firebase/auth"
-
+import axios from 'axios';
 
 const Register = () => {
 
@@ -13,7 +13,8 @@ const Register = () => {
         const password = e.target.password.value;
 
         createUserWithEmailAndPassword(database,email,password)
-        .then(data=>{
+        .then( () =>{
+
             e.target.password.value = "";
             e.target.email.value = "";
             e.target.name.value = "";
@@ -27,6 +28,8 @@ const Register = () => {
                 progress: undefined,
                 theme: "light",
                 });
+
+            axios.post("http://localhost:5000/sendmail",{email:email})    
         }
         ).catch(err => {
             alert(err.code)
