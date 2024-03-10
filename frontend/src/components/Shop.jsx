@@ -20,6 +20,8 @@ import product20 from "../assests/product20.jpg"
 import product21 from "../assests/product21.jpg"
 import product22 from "../assests/product22.jpg"
 import { useState } from "react"
+import { Link } from "react-router-dom"
+
 
 const categories = ["All Categories","Fashion","Men","Women","Kids","Chirstmas","Black Friday"]
 const colors = ["All Colors","White","Black","Brown","Blue"]
@@ -249,7 +251,7 @@ const productList = [
     }
 ]
 
-const Shop = ({handleClick}) => {
+const Shop = ({ handleClick , handleProduct }) => {
 
     const [toggle,setToggle] = useState(true)
 
@@ -354,7 +356,7 @@ const Shop = ({handleClick}) => {
                     {productDetails.map((product,index)=>{
                         return(
                         <div className="text-center basis-72 relative" key={index}>
-                        <img src={product.img} alt="" className="w-full h-80" />
+                        <Link to={"/productView"}><img src={product.img} alt="" className="w-full h-80" onClick={()=>handleProduct(product)}/></Link>
                         {
                             product.discount?<p className="absolute top-3 right-3 bg-[rgb(250,107,255)] px-3.5 py-0.5 text-sm rounded text-white">{product.disocuntRate}</p>:""
                         }

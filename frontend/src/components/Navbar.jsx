@@ -72,17 +72,17 @@ const Navbar = ({ login, setLogin, size , setCart }) => {
 
                     <div className=" mt-28 bg-white">
                         <ul className="gap-10 font-semibold flex-col flex text-center">
-                            <li className="hover:cursor-pointer hover:text-gray-600">
+                            <li className="hover:cursor-pointer hover:text-gray-600" onClick={handleClose}>
                                 <NavLink to={"/home"}>Home</NavLink>
                             </li>
-                            <NavLink to={"/shop"}><li className="hover:cursor-pointer hover:text-gray-600">Shop</li></NavLink>
-                            <li className="hover:cursor-pointer hover:text-gray-600">Catalogue</li>
+                            <NavLink to={"/shop"}><li className="hover:cursor-pointer hover:text-gray-600" onClick={handleClose}>Shop</li></NavLink>
+                            <li className="hover:cursor-pointer hover:text-gray-600" onClick={handleClose}>Catalogue</li>
                             {
-                            window.location.pathname === "/home" && <li className="hover:cursor-pointer hover:text-gray-600">
+                            window.location.pathname === "/home" && <li onClick={handleClose} className="hover:cursor-pointer hover:text-gray-600">
                             <a href="#newArrivals">New Arrivals</a>
                             </li>
                              }
-                            <NavLink to={"/contact"}><li className="hover:cursor-pointer hover:text-gray-600">Contact</li></NavLink>
+                            <NavLink to={"/contact"}><li onClick={handleClose} className="hover:cursor-pointer hover:text-gray-600">Contact</li></NavLink>
                         </ul>
                     </div>
                  </div>

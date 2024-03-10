@@ -12,6 +12,7 @@ import { useState } from "react"
 import Shop from "./components/Shop"
 import { ToastContainer, toast } from 'react-toastify';
 import CheckOut from "./components/CheckOut"
+import ProductView from "./components/ProductView"
 
 const App = ()=>{
 
@@ -19,6 +20,7 @@ const App = ()=>{
     const [cart,setCart ] = useState([]);    
 
     const handleClick = (item) => {
+
         if(login){
         let isPresent = false;
         cart.forEach((product)=>{
@@ -26,6 +28,7 @@ const App = ()=>{
             isPresent = true;
            }
         })
+
         if(isPresent){
             toast.error('Item is already added to your cart!', {
                 position: "top-right",
@@ -56,6 +59,7 @@ const App = ()=>{
         }
     
            setCart([...cart,item])
+           console.log(item);
     }
     else{
         toast.error('Please Login to add cart', {
@@ -70,6 +74,13 @@ const App = ()=>{
             });
     }
     }
+
+    const [product,setProduct] = useState([]);
+
+    const handleProduct = (item)=> {
+        setProduct([item])
+    }
+
     return (
         <>
         <BrowserRouter>
@@ -82,8 +93,9 @@ const App = ()=>{
             <Route path="/register" element={<Register />}></Route>
             <Route path="/BestSellers" element={<BestSellers handleClick={handleClick} />}></Route>
             <Route path="/SaleItems" element={<SaleItems handleClick={handleClick} />}></Route>
-            <Route path="/shop" element={<Shop handleClick={handleClick} />}></Route>
+            <Route path="/shop" element={<Shop handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
             <Route path={"/checkout"} element={<CheckOut />}></Route>
+            <Route path={"/productView"} element={<ProductView product={product}/>}></Route>
         </Routes>
         <Footer></Footer>
         <ToastContainer />
