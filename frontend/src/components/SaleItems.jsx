@@ -83,7 +83,7 @@ const productDetails = [
     }
 ]
 
-const SaleItems = ({handleClick}) => {
+const SaleItems = ({ handleClick , handleProduct}) => {
     return (
         <>
         <Home/>
@@ -100,7 +100,7 @@ const SaleItems = ({handleClick}) => {
             {productDetails.map((product,index)=>{
                 return(
                 <div className="text-center basis-64 relative" key={index}>
-                <img src={product.img} alt="" className="w-full h-80" />
+                <Link to={"/productView"}><img src={product.img} alt="" className="w-full h-80" onClick={()=>{handleProduct(product)}}/></Link>
                 {
                     product.discount?<p className="absolute top-3 right-3 bg-[rgb(250,107,255)] px-3.5 py-0.5 text-sm rounded text-white">{product.disocuntRate}</p>:""
                 }

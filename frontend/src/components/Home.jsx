@@ -3,7 +3,7 @@ import DailyDeals from "./DailyDeals"
 import Service from "./service"
 import { Link } from "react-router-dom"
 
-const Home = ({ handleClick }) => {
+const Home = ({ handleClick , handleProduct }) => {
     return(
         <>
         <div className="flex items-center justify-between lg:px-40 px-10 pt-10 bg-[#F3F0F1] overflow-hidden">
@@ -18,7 +18,7 @@ const Home = ({ handleClick }) => {
 
         </div>
         <Service></Service>
-        <DailyDeals handleClick={handleClick}></DailyDeals>
+        <DailyDeals handleClick={handleClick} handleProduct={handleProduct}></DailyDeals>
         </>
     )
 }

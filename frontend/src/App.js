@@ -86,16 +86,16 @@ const App = ()=>{
         <BrowserRouter>
         <Navbar login={login} setLogin={setLogin} size={cart.length} setCart={setCart}></Navbar>
         <Routes>
-            <Route path='/home' element={<Home handleClick={handleClick} />}></Route>
+            <Route path='/home' element={<Home handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
             <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />}></Route>
             <Route path="/" element={<Login login={login} setLogin={setLogin} />}></Route>
             <Route path="/contact" element={<Contact/>}></Route>
             <Route path="/register" element={<Register />}></Route>
-            <Route path="/BestSellers" element={<BestSellers handleClick={handleClick} />}></Route>
-            <Route path="/SaleItems" element={<SaleItems handleClick={handleClick} />}></Route>
+            <Route path="/BestSellers" element={<BestSellers handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
+            <Route path="/SaleItems" element={<SaleItems handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
             <Route path="/shop" element={<Shop handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
             <Route path={"/checkout"} element={<CheckOut />}></Route>
-            <Route path={"/productView"} element={<ProductView product={product}/>}></Route>
+            <Route path={"/productView"} element={<ProductView product={product} handleClick={handleClick} />}></Route>
         </Routes>
         <Footer></Footer>
         <ToastContainer />
