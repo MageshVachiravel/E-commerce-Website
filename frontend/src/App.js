@@ -94,7 +94,7 @@ const App = ()=>{
             <Route path="/BestSellers" element={<BestSellers handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
             <Route path="/SaleItems" element={<SaleItems handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
             <Route path="/shop" element={<Shop handleClick={handleClick} handleProduct={handleProduct}/>}></Route>
-            <Route path={"/checkout"} element={<CheckOut />}></Route>
+            <Route path={"/checkout"} element={<CheckOut cart={cart}  />}></Route>
             <Route path={"/productView"} element={<ProductView product={product} handleClick={handleClick} />}></Route>
         </Routes>
         <Footer></Footer>

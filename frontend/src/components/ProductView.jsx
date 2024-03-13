@@ -8,11 +8,11 @@ const ProductView = ({product,handleClick})=> {
         <div className="bg-gray-100 py-10 text-center ">
                 <h1 className=" text-md">HOME / <span className="font-medium">SHOP PRODUCT</span></h1>
         </div>
-          <div className="p-20">
+          <div className="md:p-20 p-10">
                {
                 product.map((item)=>{
                     return(
-                        <div className="flex gap-24">
+                        <div className="flex md:gap-24  items-center md:flex-row flex-col">
                             <img src={item.img} alt="" width="400"/>
 
                             <div>

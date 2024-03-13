@@ -109,8 +109,21 @@ const Cart = ({cart,setCart}) => {
             </div>
         }
 
-        
+        <div  className="flex justify-center">
+        <div className="bg-gray-100 w-full outline-slate-200 mx-14 my-8 px-5 py-7 outline rounded">
+            <h1 className="text-2xl font-semibold">Cart Total</h1>
+            <div className="flex justify-between mt-5">
+                <p className="text-lg">Total products</p>
+                <p className="text-lg">{cart.length}</p>
+            </div>
+            <div className="flex justify-between my-3">
+                <p className="text-lg text-purple-500 font-bold">Grand Total</p>
+                <p className="text-lg text-purple-500 font-bold">₹ {price}</p>
+            </div>
 
+            <Link to="/checkout"><button className="mt-2 bg-purple-500 text-white px-6 py-3 font-semibold rounded-3xl">PROCEED TO CHECKOUT</button></Link>
+        </div>
+        </div>
 
         </>
     )
